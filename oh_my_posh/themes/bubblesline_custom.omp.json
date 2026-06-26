@@ -1,0 +1,149 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "background": "transparent",
+          "foreground": "#3EC669",
+          "properties": {
+            "style": "folder"
+          },
+          "style": "plain",
+          "template": " \ue5ff {{ .Path }}",
+          "type": "path"
+        },
+        {
+          "background": "transparent",
+          "foreground": "#43CCEA",
+          "properties": {
+            "branch_icon": ""
+          },
+          "style": "plain",
+          "template": " {{ .HEAD }}",
+          "type": "git"
+        },
+        {
+          "background": "transparent",
+          "foreground": "#E4F34A",
+          "properties": {
+            "fetch_version": false
+          },
+          "style": "plain",
+          "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}",
+          "type": "python"
+        },
+        {
+          "background": "transparent",
+          "foreground": "#7FD5EA",
+          "properties": {
+            "fetch_version": false
+          },
+          "style": "plain",
+          "template": " \ue626 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+          "type": "go"
+        },
+        {
+          "background": "transparent",
+          "foreground": "#42E66C",
+          "properties": {
+            "fetch_version": false
+          },
+          "style": "plain",
+          "template": " \ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}",
+          "type": "node"
+        },
+        {
+          "background": "transparent",
+          "foreground": "#E64747",
+          "properties": {
+            "fetch_version": false
+          },
+          "style": "plain",
+          "template": " \ue791 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+          "type": "ruby"
+        },
+        {
+          "background": "transparent",
+          "foreground": "#E64747",
+          "properties": {
+            "fetch_version": false
+          },
+          "style": "plain",
+          "template": " \ue738 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+          "type": "java"
+        },
+        {
+          "background": "transparent",
+          "foreground": "#9B6BDF",
+          "properties": {
+            "fetch_version": false
+          },
+          "style": "plain",
+          "template": " \ue624 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+          "type": "julia"
+        },
+        {
+          "background": "transparent",
+          "foreground": "#9B6BDF",
+          "foreground_templates": [
+            "{{if eq \"Charging\" .State.String}}#40c4ff{{end}}",
+            "{{if eq \"Discharging\" .State.String}}#ff5722{{end}}",
+            "{{if eq \"Full\" .State.String}}#4caf50{{end}}"
+          ],
+          "properties": {
+            "charged_icon": "● ",
+            "charging_icon": "⇡ ",
+            "discharging_icon": "⇣ "
+          },
+          "style": "plain",
+          "template": " {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}{{ .Error }}",
+          "type": "battery"
+        }
+      ],
+      "type": "rprompt"
+    },
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "background": "transparent",
+          "foreground": "#9B6BDF",
+          "style": "plain",
+          "template": "{{ .UserName }} ",
+          "type": "session"
+        },
+        {
+          "background": "transparent",
+          "foreground": "#E64747",
+          "properties": {
+            "style": "folder"
+          },
+          "style": "plain",
+          "template": "\ue5ff {{ .Path }}",
+          "type": "path"
+        },
+        {
+          "background": "transparent",
+          "foreground": "#1E90FF",
+          "properties": {
+            "branch_icon": ""
+          },
+          "style": "plain",
+          "template": " \ue725 {{ .HEAD }}",
+          "type": "git"
+        },
+        {
+          "background": "transparent",
+          "foreground": "#9B6BDF",
+          "style": "plain",
+          "template": " ❯ ",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "version": 4
+}
